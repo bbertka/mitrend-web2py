@@ -2,7 +2,7 @@
 from mitrend import Mitrend
 
 def index():
-    response.title = 'MiTrend Quickly'
+    response.title = 'MiTrend Web2Py'
     response.subtitle = 'Symmetrix Assessments Made Easy'
     return dict(form=form())
 
@@ -14,7 +14,7 @@ def createAssessment():
             timezone='US Eastern'
             city = 'Boston'
             state = 'MA'
-            tags = ['MiTrend Mobile']
+            tags = ['MiTrend Web2Py']
 
             files = request.vars['files'].split(',')
             attributes = {'origin':'mitrend.cfapps.io'}
@@ -51,9 +51,7 @@ def form():
     if form.accepts(request,session):
         createAssessment()
     elif form.errors:
-        pass
-        #response.flash="form is invalid"
+        response.flash="form is invalid"
     else:
-        pass
-        #response.flash="please fill the form"
+        response.flash="please fill the form"
     return dict(form=form)
