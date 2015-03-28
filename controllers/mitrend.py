@@ -31,8 +31,8 @@ def createAssessment():
                     device_type=device_type,
                     files=files )
 
-            M.create_submission()
-            M.add_files()
+            M.create()
+            M.add()
             M.submit()
             if M.submission:
                 response.flash="Success!"
